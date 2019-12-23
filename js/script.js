@@ -5,8 +5,80 @@ var VincitaPotenziale;
 var Colore;
 var TipoGiocata;
 var ColoreUtente;
+var PariDispari;
+var FirstOrSecondHalf;
+var Terzine;
 
 // scelta colore
+document.getElementById('primo-12').addEventListener('click',
+function () {
+  Puntata = prompt('Quanto vuoi giocare sul "1 to 12"?');
+  if (!isNaN(Puntata) && Puntata > 0) {
+    TipoGiocata = 'Terzine';
+    Terzine = '1 to 12';
+    document.getElementById('gioca').className = 'visible';
+    document.getElementById('puntata').className = 'visible';
+    document.getElementById('importo-puntata').innerHTML = Puntata;
+    document.getElementById('tipo-giocata').innerHTML = 'sul "1 to 12"';
+    VincitaPotenziale = Puntata * 3;
+    document.getElementById('importo-vincita-pot').innerHTML = VincitaPotenziale;
+    document.getElementById('vincita-potenziale').className = 'visible';
+  } else {
+    alert('Inserisci un numero intero maggiore di zero.');
+  }
+});
+document.getElementById('secondo-12').addEventListener('click',
+function () {
+  Puntata = prompt('Quanto vuoi giocare sul "13 to 24"?');
+  if (!isNaN(Puntata) && Puntata > 0) {
+    TipoGiocata = 'Terzine';
+    Terzine = '13 to 24';
+    document.getElementById('gioca').className = 'visible';
+    document.getElementById('puntata').className = 'visible';
+    document.getElementById('importo-puntata').innerHTML = Puntata;
+    document.getElementById('tipo-giocata').innerHTML = 'sul "13 to 24"';
+    VincitaPotenziale = Puntata * 3;
+    document.getElementById('importo-vincita-pot').innerHTML = VincitaPotenziale;
+    document.getElementById('vincita-potenziale').className = 'visible';
+  } else {
+    alert('Inserisci un numero intero maggiore di zero.');
+  }
+});
+document.getElementById('terzo-12').addEventListener('click',
+function () {
+  Puntata = prompt('Quanto vuoi giocare sul "25 to 36"?');
+  if (!isNaN(Puntata) && Puntata > 0) {
+    TipoGiocata = 'Terzine';
+    Terzine = '25 to 36';
+    document.getElementById('gioca').className = 'visible';
+    document.getElementById('puntata').className = 'visible';
+    document.getElementById('importo-puntata').innerHTML = Puntata;
+    document.getElementById('tipo-giocata').innerHTML = 'sul "25 to 36"';
+    VincitaPotenziale = Puntata * 3;
+    document.getElementById('importo-vincita-pot').innerHTML = VincitaPotenziale;
+    document.getElementById('vincita-potenziale').className = 'visible';
+  } else {
+    alert('Inserisci un numero intero maggiore di zero.');
+  }
+});
+
+document.getElementById('dispari').addEventListener('click',
+function () {
+  Puntata = prompt('Quanto vuoi giocare sul dispari?');
+  if (!isNaN(Puntata) && Puntata > 0) {
+    TipoGiocata = 'PariDispari';
+    PariDispari = 'Dispari';
+    document.getElementById('gioca').className = 'visible';
+    document.getElementById('puntata').className = 'visible';
+    document.getElementById('importo-puntata').innerHTML = Puntata;
+    document.getElementById('tipo-giocata').innerHTML = 'sul dispari';
+    VincitaPotenziale = Puntata * 2;
+    document.getElementById('importo-vincita-pot').innerHTML = VincitaPotenziale;
+    document.getElementById('vincita-potenziale').className = 'visible';
+  } else {
+    alert('Inserisci un numero intero maggiore di zero.')
+  }
+});
 document.getElementById('rosso').addEventListener('click',
 function () {
   Puntata = prompt('Quanto vuoi giocare sul rosso?');
@@ -35,6 +107,40 @@ function () {
     document.getElementById('puntata').className = 'visible';
     document.getElementById('importo-puntata').innerHTML = Puntata;
     document.getElementById('tipo-giocata').innerHTML = 'sul nero';
+    VincitaPotenziale = Puntata * 2;
+    document.getElementById('importo-vincita-pot').innerHTML = VincitaPotenziale;
+    document.getElementById('vincita-potenziale').className = 'visible';
+  } else {
+    alert('Inserisci un numero intero maggiore di zero.')
+  }
+});
+document.getElementById('oneto18').addEventListener('click',
+function () {
+  Puntata = prompt('Quanto vuoi giocare sul "1 to 18"?');
+  if (!isNaN(Puntata) && Puntata > 0) {
+    TipoGiocata = 'FirstOrSecondHalf';
+    FirstOrSecondHalf = 'FirstHalf';
+    document.getElementById('gioca').className = 'visible';
+    document.getElementById('puntata').className = 'visible';
+    document.getElementById('importo-puntata').innerHTML = Puntata;
+    document.getElementById('tipo-giocata').innerHTML = 'sul "1 to 18"';
+    VincitaPotenziale = Puntata * 2;
+    document.getElementById('importo-vincita-pot').innerHTML = VincitaPotenziale;
+    document.getElementById('vincita-potenziale').className = 'visible';
+  } else {
+    alert('Inserisci un numero intero maggiore di zero.')
+  }
+});
+document.getElementById('nineteento36').addEventListener('click',
+function () {
+  Puntata = prompt('Quanto vuoi giocare sul "19 to 36"?');
+  if (!isNaN(Puntata) && Puntata > 0) {
+    TipoGiocata = 'FirstOrSecondHalf';
+    FirstOrSecondHalf = 'SecondHalf';
+    document.getElementById('gioca').className = 'visible';
+    document.getElementById('puntata').className = 'visible';
+    document.getElementById('importo-puntata').innerHTML = Puntata;
+    document.getElementById('tipo-giocata').innerHTML = 'sul "19 to 36"';
     VincitaPotenziale = Puntata * 2;
     document.getElementById('importo-vincita-pot').innerHTML = VincitaPotenziale;
     document.getElementById('vincita-potenziale').className = 'visible';
@@ -199,9 +305,30 @@ function () {
     document.getElementById('inner-roulette').classList.add('rotate36');
     Colore = 'Nero';
   }
-  document.getElementById('num-uscito').innerHTML = NumeroUscito + Colore;
+  setTimeout(function(){document.getElementById('num-uscito').innerHTML = NumeroUscito + Colore}, 8500); console.log(TipoGiocata);
+  if (TipoGiocata == 'Terzine') {
+    if ((Terzine == '1 to 12' && NumeroUscito < 13 && NumeroUscito > 0) || (Terzine == '13 to 24' &&  NumeroUscito < 25 && NumeroUscito >= 13) || (Terzine == '25 to 36' &&  NumeroUscito <= 36 && NumeroUscito >= 25)) {
+      setTimeout(function(){ alert('hai vinto ' + VincitaPotenziale + ' €	!!' )}, 8500);
+    } else {
+      setTimeout(function(){ alert('hai perso!!')}, 8500);
+    }
+  }
+  if (TipoGiocata == 'PariDispari') {
+    if (PariDispari == 'Pari' && NumeroUscito % 2 && NumeroUscito > 0 || PariDispari == 'Dispari' && NumeroUscito % 2 == 1) {
+      setTimeout(function(){ alert('hai vinto ' + VincitaPotenziale + ' €	!!' )}, 8500);
+    } else {
+      setTimeout(function(){ alert('hai perso!!')}, 8500);
+    }
+  }
   if (TipoGiocata == 'Colore') {
     if (ColoreUtente == Colore) {
+      setTimeout(function(){ alert('hai vinto ' + VincitaPotenziale + ' €	!!' )}, 8500);
+    } else {
+      setTimeout(function(){ alert('hai perso!!')}, 8500);
+    }
+  }
+  if (TipoGiocata == 'FirstOrSecondHalf') {
+    if (FirstOrSecondHalf == 'FirstHalf' &&  NumeroUscito < 19 && NumeroUscito > 0 || FirstOrSecondHalf == 'SecondHalf' && NumeroUscito >= 19) {
       setTimeout(function(){ alert('hai vinto ' + VincitaPotenziale + ' €	!!' )}, 8500);
     } else {
       setTimeout(function(){ alert('hai perso!!')}, 8500);

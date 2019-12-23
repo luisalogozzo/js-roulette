@@ -228,32 +228,30 @@ button {
   flex-wrap: wrap;
   position: absolute;
   top: 56.3%;
-  left: 44%;
-  width: 46.5%;
+  left: 43.9%;
+  width: 46.7%;
   height: 14.4%;
+  cursor: pointer;
 }
 
 .unterzo {
   width: calc(100% / 3);
-  height: 51%;
+  height: 51.9%;
 }
 
 .unsesto {
-    width: calc(100% / 6);
-    height: 49%;
+  width: calc(100% / 6);
+  height: 48.1%;
 }
 
 #primo-12 {
-  background-color: lightgreen;
 }
 
 
 #rosso {
-  background-color: red;
 }
 
 #nero {
-  background-color: black;
 }
 
 .hidden {
