@@ -222,6 +222,34 @@ button {
   transition: ease 8s;
 }
 
+#contenitore-numeri {
+/* background-color: black; */
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+position: absolute;
+top: 28.5%;
+left: 40%;
+width: 54.6%;
+height: 27.7%;
+cursor: pointer;
+}
+#contenitore-numeri div:not(:first-child) {
+  width: calc(100% / 14);
+  height: calc(100% / 3);
+}
+
+#contenitore-numeri div:hover {
+  background-color: lightgreen;
+  opacity: 0.5;
+}
+
+
+#zero {
+  width: calc(100% / 14);
+  height: 100%;
+}
+
 #contenitore-tipo-giocata {
   /* background-color: yellow; */
   display: flex;
@@ -232,6 +260,11 @@ button {
   width: 46.7%;
   height: 14.4%;
   cursor: pointer;
+}
+
+#contenitore-tipo-giocata div:hover {
+  background-color: lightgreen;
+  opacity: 0.5;
 }
 
 .unterzo {
@@ -255,12 +288,11 @@ button {
 }
 
 .hidden {
-  opacity: 0;
-  transition: 1s;
+display: none;  transition: 1s;
 }
 
 .visible {
-  opacity: 1;
+  display: inline-block;
   transition: 1s;
 }
 
