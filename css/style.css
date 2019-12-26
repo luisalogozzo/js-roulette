@@ -4,23 +4,149 @@
   margin: 0;
 }
 body {
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  height: calc(100vw * 940 / 1920);
+  position: relative;
   background-image: url(../img/background.png);
   background-repeat: no-repeat;
   background-position: center top;
-  background-size: 100% auto;
-  width: 100%;
-  height: calc(100vw * 1080 / 1920);
-  position: relative;
+  background-size: 100% calc(100vw * 940 / 1920);
 }
-.container {
-  width: 33%;
-  height: 59%;
+body > div,
+body > h1 {
   position: absolute;
-  top: 20%;
-  left: 3%;
-  text-align: center;
+}
+h1 {
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 3.9vw;
+  font-style: italic;
+  text-shadow: .2vw .2vw black;
+  border-radius: 28% 0%;
+  padding: 1.5% 1%;
+  background-color: rgba(107, 185, 164, 0.7);
 }
 
+#deposita-preleva {
+  left: 7.2%;
+  top: 1%;
+  white-space: nowrap;
+}
+
+#deposita-preleva button {
+  width: 55%;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  font-size: 2.2vw;
+  font-style: italic;
+  text-shadow: .2vw .2vw black;
+  padding: 1% 2%;
+  background-color: rgba(107, 185, 164, 0.7);
+}
+
+#deposita {
+  border-radius: 0 28%;
+}
+
+#preleva {
+  border-radius: 28% 0%;
+
+}
+#gioca-container {
+  top: 1%;
+  left: 50%;
+  width: 20%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-around;
+}
+#gioca-container button {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  font-size: 6vw;
+  font-style: italic;
+  text-shadow: .2vw .2vw black;
+  border-radius: 28% 0%;
+  padding: 1% 5%;
+  background-color: rgba(107, 185, 164, 0.7);
+}
+button:hover {
+  cursor: pointer;
+}
+#contatori {
+  display: flex;
+  flex-direction: column;
+  top: 1%;
+  right: 1%;
+  /* width: 32%; */
+  height: 17%;
+}
+#contatori hr {
+  border-color: rgba(107, 185, 164, 0.9);
+}
+#contatori > div {
+  color: white;
+  font-size: 2vw;
+  font-weight: 700;
+  text-shadow: .2vw .2vw black;
+  height: calc(100% / 3);
+  width: 100%;
+}
+#contatori > div:not(:first-child) {
+  border-top: .2vh solid rgb(107, 185, 164);
+}
+#overlay-container {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: calc(100vw * 940 / 1920);
+  z-index: 10;
+}
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-size: 5vw;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 0.8vw;
+  text-shadow: .2vw .2vw rgb(107, 185, 164);
+}
+#overlay span {
+  height: 26%;
+  line-height: 130%;
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
+}
+#overlay #ok {
+  color: white;
+  border: .2vw solid black;
+  cursor: pointer;
+  border-bottom-right-radius: 0.8vw;
+  border-bottom-left-radius: 0.8vw;
+  background-color: rgb(107, 185, 164);
+  height: 22%;
+  line-height: 112%;
+  font-size: 4.5vw;
+  font-weight: 700;
+  text-shadow: .2vw .2vw black;
+}
+.container {
+  width: 32%;
+  height: 65.4%;
+  position: absolute;
+  top: 23.9%;
+  left: 3.6%;
+  text-align: center;
+  overflow: hidden;
+}
 .container img {
   height: 100%;
   width: auto;
@@ -29,23 +155,18 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-
 }
-
 #pallina {
   position: absolute;
   top: 50%;
   left: 50%;
 }
-
 .animation {
   animation-name: pallina;
   animation-duration: 8s;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
-
 }
-
 @keyframes pallina  {
 0%   {transform: translate(-50%, -50%) rotate(0deg);}
 77%  {transform: translate(-50%, -50%) rotate(960deg);}
@@ -54,18 +175,6 @@ body {
 96%  {transform: translate(-50%, calc(-50% + 19.7%)) rotate(1079.7deg);}
 100% {transform: translate(-50%, calc(-50% + 18%)) rotate(1080.3deg);}
 }
-
-button {
-  display: inline-block;
-  font-size: 40px;
-}
-
-.gioca-container {
-  /* margin-top: 100px; */
-  font-size: 40px;
-  text-align: center;
-}
-
 .transform5050 {
   transform: translate(-50%, -50%);
 }
@@ -223,95 +332,55 @@ button {
 }
 
 #contenitore-numeri {
-/* background-color: black; */
-display: flex;
-flex-direction: column;
-flex-wrap: wrap;
-position: absolute;
-top: 28.5%;
-left: 40%;
-width: 54.6%;
-height: 27.7%;
-cursor: pointer;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 32.7%;
+  left: 40%;
+  width: 54%;
+  height: 31.9%;
+  cursor: pointer;
 }
 #contenitore-numeri div:not(:first-child) {
   width: calc(100% / 14);
   height: calc(100% / 3);
 }
-
 #contenitore-numeri div:hover {
-  background-color: lightgreen;
+  background-color: greenyellow;
   opacity: 0.5;
 }
-
-
 #zero {
   width: calc(100% / 14);
   height: 100%;
 }
-
 #contenitore-tipo-giocata {
   /* background-color: yellow; */
   display: flex;
   flex-wrap: wrap;
   position: absolute;
-  top: 56.3%;
+  top: 64.6%;
   left: 43.9%;
-  width: 46.7%;
-  height: 14.4%;
+  width: 46.3%;
+  height: 16.6%;
   cursor: pointer;
 }
-
 #contenitore-tipo-giocata div:hover {
-  background-color: lightgreen;
+  background-color: greenyellow;
   opacity: 0.5;
 }
-
 .unterzo {
   width: calc(100% / 3);
-  height: 51.9%;
+  height: 50%;
 }
-
 .unsesto {
   width: calc(100% / 6);
-  height: 48.1%;
-}
-
-#primo-12 {
-}
-
-
-#rosso {
-}
-
-#nero {
+  height: 50%;
 }
 
 .hidden {
-display: none;  transition: 1s;
-}
-
-.visible {
-  display: inline-block;
+  display: none;
+  /* opacity: 0; */
   transition: 1s;
-}
-
-#puntata {
- position: absolute;
- top: 2%;
- right: 10%;
-}
-
-#puntata h2 {
-  display: inline-block;
-}
-
-#vincita-potenziale {
-  position: absolute;
-  top: 7%;
-  right: 10%;
-}
-
-#vincita-potenziale h2 {
-  display: inline-block;
 }
