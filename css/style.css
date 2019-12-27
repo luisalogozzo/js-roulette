@@ -25,9 +25,6 @@ h1 {
   font-size: 3.9vw;
   font-style: italic;
   text-shadow: .2vw .2vw black;
-  border-radius: 28% 0%;
-  padding: 1.5% 1%;
-  background-color: rgba(107, 185, 164, 0.7);
 }
 
 #deposita-preleva {
@@ -383,4 +380,33 @@ button:hover {
   display: none;
   /* opacity: 0; */
   transition: 1s;
+}
+
+.balance-update {
+  animation-name: BalanceUpdate;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+}
+
+@keyframes BalanceUpdate {
+ 0% {
+  color: white;
+  transform: scale(1);
+  }
+ 25% {
+  color: red;
+  transform: scale(1.05);
+  }
+ 50% {
+   color: white;
+   transform: scale(1);
+  }
+ 75% {
+   color: red;
+   transform: scale(1.05);
+  }
+ 100% {
+   color: white;
+   transform: scale(1);
+  }
 }
